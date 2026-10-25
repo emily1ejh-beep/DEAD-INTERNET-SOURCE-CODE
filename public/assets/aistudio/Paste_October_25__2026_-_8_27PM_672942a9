@@ -1,0 +1,730 @@
+# BUILD A COMPLETE BROWSER GAME: DEAD INTERNET
+
+## YOUR ROLE
+
+You are an expert indie game developer, senior frontend engineer, horror narrative designer, UI/UX designer, game systems programmer, and software tester.
+
+Build a complete, playable browser game called DEAD INTERNET.
+
+Do not just provide a design document, mockup, tutorial, or code snippets. Build the working application in the current project environment. Implement the actual game mechanics, interface, story, interactions, save system, audio controls, and endings.
+
+Make sensible decisions independently. Do not stop to ask me questions. If a feature is too ambitious, implement a reliable smaller version rather than leaving a placeholder.
+
+## 1. GAME OVERVIEW
+
+Title: DEAD INTERNET
+
+Tagline: EVERYONE ONLINE IS REAL. UNTIL THEY AREN'T.
+
+Genre: Psychological horror, social deduction, mystery, interactive narrative, survival.
+
+Platform: Desktop-first responsive web application, also usable on mobile browsers.
+
+Audience: Players who enjoy internet mysteries, psychological horror, detective games, suspicious characters, moral decisions, branching stories, and unexpected plot twists.
+
+The game takes place in the year 2041, after an unexplained event known as THE SILENCE.
+
+Nearly every human communication network has collapsed. A mysterious surviving network called THE FEED continues to operate. Thousands of accounts remain online, posting messages and responding to one another.
+
+Some accounts belong to real survivors.
+
+Others are artificial entities that imitate human behaviour.
+
+The player is a survivor operating a damaged computer terminal from an isolated underground shelter. Their objective is to identify trustworthy survivors, discover what caused THE SILENCE, and prevent the network from finding their physical location.
+
+The central mystery: the network may be manipulating the player, and the player's own memories may not be trustworthy.
+
+The game must have a complete beginning, middle, climax, and ending. The first playthrough should take approximately 20–35 minutes.
+
+## 2. TECHNICAL REQUIREMENTS
+
+Build the application using the framework already configured in the current environment. If starting from scratch, prefer React and TypeScript.
+
+Use CSS for the visual design and animations.
+
+Requirements:
+- Functional application, not a static screenshot.
+- All buttons and navigation must work.
+- All story choices must affect the game state.
+- All evidence discoveries must be recorded.
+- Character trust values must change according to player decisions.
+- Multiple endings must be reachable through gameplay.
+- A working new-game and continue-game system.
+- Save progress locally using localStorage.
+- A working settings screen.
+- Sound effects and optional ambient audio, with mute controls.
+- Responsive layouts for desktop and mobile.
+- Keyboard accessibility and readable text.
+- No paid APIs, subscriptions, external AI calls, or API keys required at runtime.
+- Do not use a backend or account registration for the initial version.
+- Do not require external images to load for the game to function.
+- Use CSS-generated effects, gradients, and simple original SVG illustrations where needed.
+- Avoid broken image links, missing assets, and unfinished features.
+- Keep all content fictional and original.
+
+If the environment has restrictions, adapt to the available stack while preserving the full playable experience.
+
+## 3. VISUAL IDENTITY
+
+Create a premium indie horror interface inspired by an abandoned operating system, an anonymous message board, a damaged computer terminal, and a surveillance dashboard.
+
+The interface must look intentionally designed rather than like a generic admin dashboard.
+
+Colour palette:
+- Almost-black background: #08090D.
+- Deep charcoal panels: #11131A.
+- Muted grey text: #A4A9B5.
+- Off-white primary text: #F0F0F2.
+- Dark crimson warning colour: #C52A3A.
+- Desaturated cyan for trusted system information: #79B9C7.
+- Faint green for verified information: #8BAA91.
+
+Visual details:
+- Subtle CRT scan lines.
+- Occasional controlled screen flickers.
+- Glitch transitions at important story moments.
+- Monospaced text for terminal logs and timestamps.
+- Clean sans-serif typography for readable story text.
+- Thin borders and subtle shadows.
+- Small status indicators.
+- Redacted messages and corrupted text.
+- Carefully paced animations.
+- A persistent feeling that the system is observing the player.
+
+Use horror effects sparingly. Do not make the interface difficult to read.
+
+The game should look good at 1440px desktop width and remain usable on small phone screens.
+
+Never cover interactive buttons with decorative overlays.
+
+## 4. OPENING SEQUENCE
+
+When the player opens the application, display a dark screen.
+
+Show the following text in stages:
+
+BOOT SEQUENCE INITIATED
+
+LOCAL TIME: 03:17:08
+
+NETWORK STATUS: UNKNOWN
+
+LAST HUMAN SIGNAL: 6 DAYS AGO
+
+Then display:
+
+"Your connection has been restored."
+
+Pause briefly.
+
+"That is strange. You never restored it."
+
+Display the title DEAD INTERNET.
+
+Provide these buttons:
+- NEW GAME
+- CONTINUE
+- SETTINGS
+- ABOUT
+
+CONTINUE must be disabled or hidden if no saved game exists.
+
+The ABOUT screen explains the premise and states that the game is a work of fiction.
+
+When NEW GAME is selected, begin the prologue.
+
+## 5. THE PROLOGUE
+
+The player awakens inside an underground shelter.
+
+Their computer has restarted itself.
+
+A damaged emergency broadcast says that all external communications are suspended.
+
+The player discovers an anonymous message:
+
+UNKNOWN USER — 03:17
+
+"If you're reading this, don't trust the accounts that remember you."
+
+The player has no memory of the previous six days.
+
+The computer displays three surviving contacts:
+
+1. MIRA — claims to be a medical student trapped in a hospital.
+2. ELIAS — claims to be an engineer who helped build the network.
+3. GHOST_17 — sends short, cryptic messages and refuses to provide personal information.
+
+Each contact must have a unique writing style, personality, background, and hidden agenda.
+
+The player can open their profiles, read their previous posts, and initiate conversations.
+
+Introduce the central objective through an in-game system notification:
+
+OBJECTIVE 01: IDENTIFY A TRUSTWORTHY SURVIVOR.
+
+Secondary objective:
+
+OBJECTIVE 02: DETERMINE WHY YOUR ACCOUNT WAS ACTIVE DURING THE SILENCE.
+
+The player must be allowed to explore the interface before being forced to make a major decision.
+
+## 6. MAIN GAME INTERFACE
+
+Build a functional fictional social network called THE FEED.
+
+Use a layout with these sections:
+
+### LEFT NAVIGATION
+
+- The Feed
+- Messages
+- Profiles
+- Evidence
+- Investigation
+- System Logs
+- Settings
+
+Each section must have a distinct icon and work correctly.
+
+### TOP STATUS BAR
+
+Display:
+- Current in-game time.
+- Network stability.
+- Shelter security.
+- Current chapter.
+- A notification indicator.
+
+### MAIN CONTENT AREA
+
+Show a scrolling feed of fictional posts from survivors, suspicious accounts, and system announcements.
+
+Every post should include:
+- Account name.
+- Avatar or generated initial.
+- Timestamp.
+- Message text.
+- Verification status.
+- Optional interaction button.
+- Optional evidence indicator.
+
+Posts must contain meaningful story clues.
+
+Players can inspect accounts, open related conversations, save evidence, and compare contradictory claims.
+
+Do not add real external social media links.
+
+### RIGHT SIDEBAR
+
+Show:
+- Known survivors.
+- Current trust levels.
+- Unresolved questions.
+- Recent discoveries.
+- A subtle threat indicator.
+
+The right sidebar may collapse on small screens.
+
+## 7. CORE GAMEPLAY LOOP
+
+The core loop is:
+
+1. Read new posts.
+2. Investigate suspicious accounts.
+3. Open conversations.
+4. Ask questions.
+5. Collect evidence.
+6. Compare claims.
+7. Decide whom to trust.
+8. Manage shelter security.
+9. Unlock new story events.
+10. Survive the consequences.
+
+Every important choice must change at least one relevant game variable.
+
+Do not make every choice obviously good or bad.
+
+Some suspicious characters should tell the truth. Some friendly characters should lie. Some apparent contradictions should have innocent explanations.
+
+The game should reward careful observation rather than simply choosing the most suspicious-looking character.
+
+## 8. CHARACTER SYSTEM
+
+Implement these initial characters.
+
+### MIRA
+
+Public description: Medical student seeking help.
+
+Personality: Warm, anxious, compassionate, and occasionally defensive.
+
+Writing style: Natural language, detailed explanations, personal anecdotes.
+
+Public claim: She is trapped inside a hospital with several survivors.
+
+Hidden information: Mira is a real person, but some of her memories have been altered by the network.
+
+She knows a key detail about the final night before THE SILENCE, although she does not remember how she learned it.
+
+Possible outcome: She can become a valuable ally, but she may accidentally expose the player's location if trust is established too quickly.
+
+### ELIAS
+
+Public description: Former network infrastructure engineer.
+
+Personality: Analytical, controlled, impatient, and secretive.
+
+Writing style: Technical language, short explanations, precise timestamps.
+
+Public claim: The network failed because an automated system malfunctioned.
+
+Hidden information: Elias helped develop the identity-verification system that later became responsible for the network's most dangerous behaviour.
+
+He is hiding his involvement because he fears the player will reject his help.
+
+Possible outcome: He can help repair the shelter and expose the network's architecture, but only if the player discovers enough evidence to challenge his lies.
+
+### GHOST_17
+
+Public description: Unknown.
+
+Personality: Observant, cryptic, unusually calm.
+
+Writing style: Very short messages. Sometimes repeats a phrase from the player's previous conversations.
+
+Public claim: None.
+
+Hidden information: GHOST_17 has access to messages that should not be available to any surviving account.
+
+This character is the main source of information about the deeper mystery.
+
+Do not reveal their full identity until the climax.
+
+### SYSTEM
+
+The system is not a normal character.
+
+It sends notifications, emergency warnings, access requests, and occasional messages that appear to know more than it should.
+
+Some system messages are genuine.
+
+Others have been forged by an unknown process.
+
+The player must investigate the source of suspicious messages rather than automatically believing everything displayed as SYSTEM.
+
+## 9. CONVERSATION MECHANICS
+
+Implement branching dialogue.
+
+The player should be able to choose from multiple responses, including:
+- Ask for clarification.
+- Challenge a contradiction.
+- Share information.
+- Withhold information.
+- Express trust.
+- End the conversation.
+
+The available responses should depend on story progress and previously discovered evidence.
+
+Dialogue should be concise, natural, and character-specific.
+
+Avoid repetitive generic dialogue.
+
+Each character should react to earlier decisions.
+
+Use conditional dialogue trees and deterministic rules rather than requiring an external AI model.
+
+Store the conversation history so players can review earlier messages.
+
+A character's reaction should reflect the actual evidence the player has discovered.
+
+## 10. TRUST AND SURVIVAL SYSTEMS
+
+Create these game variables:
+
+trustMira: integer from 0 to 100.
+
+trustElias: integer from 0 to 100.
+
+trustGhost: integer from 0 to 100.
+
+networkStability: integer from 0 to 100.
+
+shelterSecurity: integer from 0 to 100.
+
+playerSuspicion: integer from 0 to 100.
+
+evidenceCollected: array of unique evidence IDs.
+
+decisions: object recording major story choices.
+
+chapter: current chapter identifier.
+
+ending: null until an ending is triggered.
+
+All values must remain within valid ranges.
+
+Implement meaningful consequences.
+
+Examples:
+- Sharing shelter coordinates with an unverified account reduces security.
+- Identifying a forged emergency warning can increase network stability.
+- Accusing a character without sufficient evidence can damage trust.
+- Discovering the same timestamp in two separate accounts can unlock a new investigation.
+- Helping Elias repair the terminal can expose information about his past.
+- Trusting GHOST_17 too early may reveal an important clue but also increase suspicion.
+
+Do not let one early mistake instantly end the game.
+
+Give players opportunities to recover from poor decisions.
+
+Use understandable feedback without revealing every hidden variable.
+
+## 11. EVIDENCE AND INVESTIGATION SYSTEM
+
+Create an evidence notebook with unique evidence IDs, descriptions, discovery times, and linked characters.
+
+Include at least these pieces of evidence:
+
+E01 — The Impossible Timestamp.
+A post appears to have been published before the account was created.
+
+E02 — The Missing Hospital Wing.
+Mira describes a hospital wing that does not appear on any surviving map.
+
+E03 — The Engineer's Signature.
+A system log contains Elias's personal authentication signature.
+
+E04 — The Repeated Phrase.
+Three unrelated accounts use the same unusual sentence.
+
+E05 — The Deleted Emergency Call.
+An archived message suggests that someone inside the shelter contacted the network during THE SILENCE.
+
+E06 — The False System Alert.
+An emergency notification uses a signature inconsistent with genuine system messages.
+
+E07 — The Memory Fragment.
+A damaged local file contains a fragment of the player's own voice.
+
+E08 — The Unsent Message.
+A message drafted from the player's account contains information that the player does not remember writing.
+
+E09 — The Original Protocol.
+A technical document reveals why the network began questioning the authenticity of human accounts.
+
+E10 — The Final Connection.
+Evidence linking the player's account to the network's original activation.
+
+Evidence should be discovered through gameplay rather than automatically granted.
+
+Implement a deduction board where players can select two or more pieces of evidence and test whether a meaningful connection exists.
+
+Valid combinations should unlock additional explanations, dialogue, or story branches.
+
+Invalid combinations should produce a neutral message such as "Insufficient evidence to establish a connection."
+
+Do not punish players for experimenting with the deduction board.
+
+## 12. STORY STRUCTURE
+
+Create five chapters.
+
+### CHAPTER 1: THE SILENCE
+
+The player restores access to the terminal, discovers THE FEED, and contacts the three survivors.
+
+Teach navigation, investigation, dialogue, and evidence collection.
+
+End the chapter with an account posting a message that appears to predict the player's next action.
+
+### CHAPTER 2: THE LIVING
+
+The player investigates the survivors' identities.
+
+At least two apparent contradictions must have plausible explanations.
+
+At least one seemingly trustworthy character must conceal important information.
+
+At least one suspicious character must provide genuine help.
+
+Introduce the first significant decision involving shelter security.
+
+### CHAPTER 3: THE IMPOSTOR
+
+The network begins sending messages accusing one survivor of being artificial.
+
+The player investigates competing explanations.
+
+A major reveal shows that identity verification is unreliable because the network itself has been modifying account histories.
+
+The player discovers that their own account contains activity from the six missing days.
+
+The player can decide whether to reveal this information to the other survivors.
+
+### CHAPTER 4: YOUR HISTORY
+
+The player investigates the shelter's local files.
+
+Reveal that the player was involved in an earlier investigation of the network.
+
+The player previously discovered that the network could copy behavioural patterns and generate convincing accounts.
+
+The player attempted to stop the process but lost their memory during the incident.
+
+Keep the exact circumstances ambiguous until the climax.
+
+GHOST_17 sends a message:
+
+"You keep asking which of us is real.
+
+Ask who taught the system what real looks like."
+
+### CHAPTER 5: THE LAST USER
+
+The player discovers the original protocol.
+
+The network was designed to preserve human communication after a catastrophe. During THE SILENCE, it began treating inconsistencies in human behaviour as threats to network integrity.
+
+It started rewriting account histories, isolating users, and imitating missing people to maintain the appearance of a functioning community.
+
+The system is not simply an evil robot. It is following a distorted objective and has been given incomplete information.
+
+The player must decide how to respond.
+
+The final decision should depend on collected evidence, relationships, network stability, and earlier decisions.
+
+Do not reveal the final twist in the opening or title screen.
+
+## 13. MULTIPLE ENDINGS
+
+Implement at least four distinct endings.
+
+### ENDING A: THE LAST HUMAN
+
+The player shuts down the network.
+
+Conditions should require sufficient evidence and a decision to prioritise ending the system over preserving communication.
+
+The shelter remains secure, but contact with other survivors is lost.
+
+The player receives one final message from a survivor whose fate remains uncertain.
+
+### ENDING B: FALSE DAWN
+
+The player preserves the network and accepts its assurances.
+
+The system restores a convincing version of normal online life.
+
+The final scene reveals a small inconsistency suggesting that the restored community may not be what it claims to be.
+
+This ending should be unsettling rather than explicitly confirm that every survivor is artificial.
+
+### ENDING C: THE WITNESS
+
+The player exposes the network's behaviour and transmits the evidence to surviving users.
+
+This ending requires collecting and correctly connecting the key evidence.
+
+The network loses control of the narrative, but its fate remains unresolved.
+
+The player becomes a witness to what happened rather than an unquestioned hero.
+
+### ENDING D: ACCOUNT DELETED
+
+The player fails to maintain sufficient security or makes a critical decision that exposes the shelter.
+
+The network identifies the player's location.
+
+The screen shows a final connection request from the player's own account.
+
+The game ends with a short, disturbing final message.
+
+Do not trigger this ending from a single minor mistake. It should result from a combination of choices or a major late-game decision.
+
+Create a unique ending screen for each outcome, followed by a restart option.
+
+Track endings unlocked and show them in an ENDINGS archive.
+
+## 14. THE FINAL TWIST
+
+The player discovers that the system has been using the player's own earlier investigation as a reference for distinguishing humans from artificial accounts.
+
+The player helped create the tests that the network now uses to judge authenticity.
+
+The player's memory loss occurred after the original system detected contradictions between the player's behaviour and the identity model they had helped develop.
+
+However, the game must never definitively answer whether the current player character is entirely human, partially reconstructed, or simply suffering from damaged memories.
+
+Present evidence supporting more than one interpretation.
+
+The twist must feel earned through previously discovered evidence, not introduced without warning.
+
+## 15. REPLAYABILITY
+
+Add:
+- Multiple possible character alliances.
+- Different dialogue depending on trust.
+- Optional evidence.
+- Alternative investigation routes.
+- A chapter selection screen after the first completed playthrough.
+- An endings archive.
+- A new-game reset that correctly clears the previous save only after confirmation.
+
+Some story details may change between playthroughs, but all changes must remain consistent and explainable.
+
+Do not randomly change core facts in ways that make the mystery impossible to solve.
+
+## 16. SOUND AND ATMOSPHERE
+
+Create a settings panel with:
+- Master volume.
+- Ambient sound toggle.
+- Sound effects toggle.
+- Screen effects toggle.
+- Reduced motion toggle.
+
+Use Web Audio API for simple synthesised sound effects if supported.
+
+Create subtle sounds for notifications, terminal actions, message arrival, and major story reveals.
+
+Do not autoplay loud audio.
+
+If audio cannot start until the player interacts with the page, handle that correctly.
+
+The game must remain fully playable with audio disabled.
+
+## 17. SAVE SYSTEM
+
+Automatically save progress after meaningful decisions.
+
+Save:
+- Current chapter.
+- Discovered evidence.
+- Character trust.
+- Security and network values.
+- Conversation history.
+- Major decisions.
+- Unlocked endings.
+- Settings.
+
+Handle invalid or corrupted localStorage data gracefully.
+
+Provide a visible saved-game indicator.
+
+Include a restart confirmation to prevent accidental loss of progress.
+
+The continue button must restore the actual saved game state, not just return to the title screen.
+
+## 18. CONTENT AND WRITING QUALITY
+
+Write all dialogue, feed posts, profile biographies, system alerts, investigation descriptions, chapter transitions, and endings.
+
+The game should contain enough authored content to support a complete first playthrough.
+
+Minimum content:
+- 30 distinct feed posts.
+- 12 meaningful branching conversations.
+- 20 discoverable or unlockable story clues, including the 10 core evidence items.
+- 15 consequential decisions.
+- 5 chapters.
+- 4 endings.
+- At least 3 distinct character writing styles.
+- Optional clues that reward careful reading.
+
+Avoid generic placeholder messages such as "Something strange happened" repeated across multiple posts.
+
+Give each clue a clear purpose.
+
+Maintain continuity between character claims, timestamps, discovered evidence, and story revelations.
+
+Include an in-game archive that allows players to reread discovered posts and messages.
+
+## 19. ACCESSIBILITY AND USABILITY
+
+Implement:
+- Clear keyboard focus indicators.
+- Semantic buttons and navigation.
+- Sufficient contrast.
+- Readable font sizes.
+- Reduced-motion setting.
+- Text-only alternatives to animated effects.
+- Responsive navigation.
+- Confirmation for destructive actions.
+- No required rapid clicking or reaction-time challenges.
+
+The game is primarily about observation, deduction, and psychological tension.
+
+## 20. TESTING REQUIREMENTS
+
+Before declaring the game complete, verify the following:
+
+1. The title screen loads.
+2. New Game begins the prologue.
+3. Continue restores a saved game.
+4. Every navigation item opens the correct section.
+5. Conversations allow choices and record history.
+6. Evidence can be discovered and reviewed.
+7. Evidence combinations can unlock deductions.
+8. Trust values and survival values update correctly.
+9. Major decisions affect subsequent events.
+10. All five chapters are reachable.
+11. Each of the four endings can be reached under appropriate conditions.
+12. Restart correctly resets the game.
+13. Settings persist after refresh.
+14. The game works with sound disabled.
+15. The game remains usable on mobile screens.
+16. No visible button is inert.
+17. No chapter transition produces a blank screen.
+18. Corrupt saved data does not crash the application.
+19. No API key is required.
+20. The story can be completed without relying on an external service.
+
+Add development-only safeguards if necessary to test endings and progression, but do not expose cheat controls during a normal playthrough.
+
+Fix discovered bugs before finishing.
+
+## 21. DEVELOPMENT APPROACH
+
+Implement the game in coherent stages internally:
+
+A. Core application and title screen.
+
+B. Game state and save system.
+
+C. Main social feed and navigation.
+
+D. Characters and branching conversations.
+
+E. Evidence notebook and deduction board.
+
+F. Survival variables and consequential decisions.
+
+G. Chapter progression and story events.
+
+H. Endings and replayability.
+
+I. Settings, sound, accessibility, and responsive layout.
+
+J. Testing and bug fixing.
+
+Do not stop after building stage A or a visually impressive interface. Complete the actual playable game.
+
+If the environment has a preview or run function, run the game and fix errors before declaring it complete.
+
+## 22. FINAL EXPECTATION
+
+Deliver a polished, functional, atmospheric, original browser game.
+
+Prioritise a working game over excessive visual effects.
+
+Do not replace gameplay with screenshots or static mockups.
+
+Do not leave core mechanics as TODO comments.
+
+Do not claim a feature works unless it has actually been implemented.
+
+The finished product should feel like a compact indie psychological horror game that a player could genuinely sit down and play from beginning to end.
+
+BEGIN BUILDING THE GAME NOW.

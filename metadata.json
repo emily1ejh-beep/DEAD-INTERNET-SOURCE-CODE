@@ -1,0 +1,6 @@
+{
+  "name": "DEAD INTERNET",
+  "description": "A psychological horror and social deduction browser game set in 2041 after The Silence. Investigate survivors, interrogate accounts, uncover the network's secrets, and survive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
